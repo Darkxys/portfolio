@@ -5,6 +5,7 @@ import { AbsoluteCenter, Box, Button, Center, Divider, Flex, Heading, Image, Lin
 import { FaCircle, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { profile_info } from '../_data';
 import RatingBar from '../_components/rating/RatingBar';
+import { Fragment } from 'react';
 
 export default function Home() {
   const all_projects = profile_info.projects.map(p => p.items).flat();
@@ -117,8 +118,7 @@ export default function Home() {
                 const graduated_string = graduated.toLocaleDateString('en-us', { year: 'numeric', month: 'short' });
 
                 return (
-
-                  <Flex my={'0.5em'} flexDirection={'column'}>
+                  <Flex my={'0.5em'} flexDirection={'column'} key={`education-${e.diploma_degree}`}>
                     <Text fontSize={'1.2em'} fontWeight={'bold'}>{e.diploma_type} in {e.diploma_degree}</Text>
                     <Flex gap={2} w={'inherit'} mx={{ base: 'auto', md: '0' }}>
                       <Text opacity={0.9} fontSize={'0.8em'} as='span' fontWeight={'bold'} fontStyle={'oblique'}>{e.school_name}</Text>
@@ -160,7 +160,7 @@ export default function Home() {
                 const finished_string = finished?.toLocaleDateString('en-us', { year: 'numeric', month: 'short' });
 
                 return (
-                  <Flex my={'0.5em'} flexDirection={'column'}>
+                  <Flex my={'0.5em'} flexDirection={'column'} key={`work-${e.id}`}>
                     <Text fontSize={'1.2em'} fontWeight={'bold'}>{e.job_title}</Text>
                     <Flex gap={2} w={'inherit'} mx={{ base: 'auto', md: '0' }}>
                       <Text opacity={0.9} fontSize={'0.8em'} as='span' fontWeight={'bold'} fontStyle={'oblique'}>{e.company}</Text>
@@ -195,18 +195,18 @@ export default function Home() {
           >
             <Flex flexDirection={'column'} gap={7}>
               {
-                grouped_skills_category.map(group => {
+                grouped_skills_category.map((group, index) => {
                   return (
-                    <Flex my={'0.5em'} flexDirection={{ base: 'column', md: 'row' }} gap={7}>
+                    <Flex my={'0.5em'} flexDirection={{ base: 'column', md: 'row' }} gap={7} key={`group-category-${index}`}>
                       {
                         group.map(skills => {
                           return (
-                            <Flex flexDirection={'column'} gap={1}>
+                            <Flex flexDirection={'column'} gap={1} key={`category-skill-${skills.category_name}`}>
                               <Text mx={'auto'}>{skills.category_name}</Text>
                               {
                                 skills.items.map(skill => {
                                   return (
-                                    <>
+                                    <Fragment key={`skills-${skill.skill_label}`}>
                                       <Text ml={'0.35em'} mb={-1}>{skill.skill_label}</Text>
                                       <RatingBar
                                         value={skill.score}
@@ -215,7 +215,7 @@ export default function Home() {
                                         w={{ base: '100%', md: '20em' }} h={'1.1em'}
                                         bg={'gray.600'}
                                       />
-                                    </>
+                                    </Fragment>
                                   )
                                 })
                               }
