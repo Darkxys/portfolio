@@ -27,7 +27,7 @@ export default function Home() {
         position={'relative'}
       >
         <AbsoluteCenter axis={'both'} minW={'fit-content'}>
-          <Text textAlign={'center'} minW={'70vw'} fontSize={35}>I'm <u><b>Francis Painchaud</b></u>, a <u>Software Developer</u> from <u>Quebec</u> with an interest in <u>Software Development</u>, <u>Backend Development</u> and <u>Artificial Intelligence</u>.</Text>
+          <Text textAlign={'center'} minW={'70vw'} fontSize={35}>I&apos;m <u><b>Francis Painchaud</b></u>, a <u>Software Developer</u> from <u>Quebec</u> with an interest in <u>Software Development</u>, <u>Backend Development</u> and <u>Artificial Intelligence</u>.</Text>
 
           <Center flexDir={'column'} mt={5}>
             <Flex gap={3}>
@@ -88,7 +88,7 @@ export default function Home() {
             textAlign={{ base: 'center', md: 'left' }}
           >
             <Text>About me</Text>
-            <Text>As a skilled and enthusiastic computer science professional, I excel in transforming complex business needs into efficient technical solutions. Fluent in both English and French, my expertise lies in application development, data analysis, and AI technologies. My passion for programming was sparked by a fascination with technology's potential to drive change and innovation—a force that continues to inspire my career goals. In my spare time, I immerse myself in the evolving world of AI and machine learning, constantly seeking to expand my knowledge of programming concepts and best practices.</Text>
+            <Text>As a skilled and enthusiastic computer science professional, I excel in transforming complex business needs into efficient technical solutions. Fluent in both English and French, my expertise lies in application development, data analysis, and AI technologies. My passion for programming was sparked by a fascination with technology&apos;s potential to drive change and innovation—a force that continues to inspire my career goals. In my spare time, I immerse myself in the evolving world of AI and machine learning, constantly seeking to expand my knowledge of programming concepts and best practices.</Text>
           </Box>
         </Center>
       </Box>
