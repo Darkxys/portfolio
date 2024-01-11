@@ -1,13 +1,15 @@
 'use client'
 
 import profilePicture from '@/app/_assets/profile.jpg';
-import { AbsoluteCenter, Box, Button, Center, Divider, Flex, Heading, Image, Link, ListItem, Text, UnorderedList } from '@chakra-ui/react'
+import { AbsoluteCenter, Box, Button, Center, DarkMode, Divider, Flex, Heading, Image, Link, ListItem, Text, UnorderedList, useColorMode } from '@chakra-ui/react'
 import { FaCircle, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { profile_info } from '../_data';
 import RatingBar from '../_components/rating/RatingBar';
 import { Fragment } from 'react';
 
 export default function Home() {
+  const { colorMode } = useColorMode();
+
   const all_projects = profile_info.projects.map(p => p.items).flat();
   const grouped_skills_category = [];
 
@@ -20,7 +22,7 @@ export default function Home() {
   }
 
   return (
-    <>
+    <Box bg={'gray.800'}>
       <Box
         w={'100vw'} h={'100vh'}
         backgroundImage={`url('')`}
@@ -231,6 +233,6 @@ export default function Home() {
           </Box>
         </Flex>
       </Flex>
-    </>
+    </Box>
   )
 }
