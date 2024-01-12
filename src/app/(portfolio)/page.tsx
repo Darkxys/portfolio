@@ -1,11 +1,13 @@
 'use client'
 
 import profilePicture from '@/app/_assets/profile.jpg';
-import { AbsoluteCenter, Box, Button, Center, DarkMode, Divider, Flex, Heading, Image, Link, ListItem, Text, UnorderedList, useColorMode } from '@chakra-ui/react'
+import { AbsoluteCenter, Box, Button, Center, DarkMode, Divider, Flex, Heading, Image, Link, ListItem, Spacer, Text, UnorderedList, useColorMode } from '@chakra-ui/react'
 import { FaCircle, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { profile_info } from '../_data';
 import RatingBar from '../_components/rating/RatingBar';
 import { Fragment } from 'react';
+import Project from '../_components/project/Project';
+import UnderlinedTitle from '../_components/title/UnderlinedTitle';
 
 export default function Home() {
   const { colorMode } = useColorMode();
@@ -55,12 +57,13 @@ export default function Home() {
               </Link>
             </Flex>
             <Link
+
               mt={5}
               isExternal
               maxW={'fit-content'}
               href={'https://www.linkedin.com/in/francis-painchaud-1a5003246/'}
             >
-              <Button>
+              <Button rounded={20} border={'2px purple solid'}>
                 <Flex flexDir={'row'} gap={2}>
                   <Text>Resume</Text>
                   <FaFileDownload />
@@ -72,7 +75,7 @@ export default function Home() {
       </Box>
       <Box w={'full'} bg={'gray.900'} py={20}>
         <Center mx={'auto'} maxW={{ base: '100em', md: '70em' }} flexDirection={{ base: 'column', md: 'row' }}>
-          <Box maxW={'30vw'} w={{ base: '40vw', md: '15em' }}>
+          <Box maxW={'30vw'} w={{ base: '100vw', md: '15em' }}>
             <Image
               mx={{ base: 'auto', md: '0' }}
               minW={180} maxW={180}
@@ -86,32 +89,27 @@ export default function Home() {
           <Box
             mx={'auto'}
             w={{ base: '100vw', md: '65em' }}
-            maxW={{ base: '75vw', md: '35em' }}
+            maxW={{ base: '75vw', md: '40em' }}
             textAlign={{ base: 'center', md: 'left' }}
           >
-            <Text>About me</Text>
+            <Text fontWeight={'bold'} fontSize={'1.5em'} mb={2}>About me</Text>
             <Text>As a skilled and enthusiastic computer science professional, I excel in transforming complex business needs into efficient technical solutions. Fluent in both English and French, my expertise lies in application development, data analysis, and AI technologies. My passion for programming was sparked by a fascination with technology&apos;s potential to drive change and innovation—a force that continues to inspire my career goals. In my spare time, I immerse myself in the evolving world of AI and machine learning, constantly seeking to expand my knowledge of programming concepts and best practices.</Text>
           </Box>
         </Center>
       </Box>
-      <Flex flexDirection={'column'} mx={'auto'} maxW={{ base: '100em', md: '70em' }}>
-        <Flex my={'1.5em'} flexDirection={{ base: 'column', md: 'row' }}>
+      <Flex flexDirection={'column'} mt={'2em'} mx={'auto'} maxW={{ base: '100em', md: '70em' }}>
+        <Flex my={'2em'} flexDirection={{ base: 'column', md: 'row' }}>
           <Box
-            maxW={'30vw'} w={{ base: '40vw', md: '15em' }}
+            maxW={'30vw'} w={{ base: '100vw', md: '15em' }}
             mx={{ base: 'auto', md: '0' }}
             textAlign={{ base: 'center', md: 'left' }}
           >
-            <Text
-              fontSize={'1.5em'}
-              fontWeight={'bold'}
-            >
-              EDUCATION
-            </Text>
+            <UnderlinedTitle text={'EDUCATION'} color={'purple'} />
           </Box>
           <Box
             mx={'auto'}
             w={{ base: '100vw', md: '65em' }}
-            maxW={{ base: '75vw', md: '35em' }}
+            maxW={{ base: '75vw', md: '40em' }}
             textAlign={{ base: 'center', md: 'left' }}
           >
             {
@@ -120,7 +118,7 @@ export default function Home() {
                 const graduated_string = graduated.toLocaleDateString('en-us', { year: 'numeric', month: 'short' });
 
                 return (
-                  <Flex my={'0.5em'} flexDirection={'column'} key={`education-${e.diploma_degree}`}>
+                  <Flex flexDirection={'column'} key={`education-${e.diploma_degree}`}>
                     <Text fontSize={'1.2em'} fontWeight={'bold'}>{e.diploma_type} in {e.diploma_degree}</Text>
                     <Flex gap={2} w={'inherit'} mx={{ base: 'auto', md: '0' }}>
                       <Text opacity={0.9} fontSize={'0.8em'} as='span' fontWeight={'bold'} fontStyle={'oblique'}>{e.school_name}</Text>
@@ -134,23 +132,18 @@ export default function Home() {
           </Box>
         </Flex>
         <Divider bg={'white'} />
-        <Flex my={'1.5em'} flexDirection={{ base: 'column', md: 'row' }}>
+        <Flex my={'2em'} flexDirection={{ base: 'column', md: 'row' }}>
           <Box
-            maxW={'30vw'} w={{ base: '40vw', md: '15em' }}
+            maxW={'30vw'} w={{ base: '100vw', md: '15em' }}
             mx={{ base: 'auto', md: '0' }}
             textAlign={{ base: 'center', md: 'left' }}
           >
-            <Text
-              fontSize={'1.5em'}
-              fontWeight={'bold'}
-            >
-              WORK
-            </Text>
+            <UnderlinedTitle text={'WORK'} color={'purple'} />
           </Box>
           <Box
             mx={'auto'}
             w={{ base: '100vw', md: '65em' }}
-            maxW={{ base: '75vw', md: '35em' }}
+            maxW={{ base: '75vw', md: '40em' }}
             textAlign={{ base: 'center', md: 'left' }}
           >
             {
@@ -162,7 +155,7 @@ export default function Home() {
                 const finished_string = finished?.toLocaleDateString('en-us', { year: 'numeric', month: 'short' });
 
                 return (
-                  <Flex my={'0.5em'} flexDirection={'column'} key={`work-${e.id}`}>
+                  <Flex flexDirection={'column'} key={`work-${e.id}`}>
                     <Text fontSize={'1.2em'} fontWeight={'bold'}>{e.job_title}</Text>
                     <Flex gap={2} w={'inherit'} mx={{ base: 'auto', md: '0' }}>
                       <Text opacity={0.9} fontSize={'0.8em'} as='span' fontWeight={'bold'} fontStyle={'oblique'}>{e.company}</Text>
@@ -177,34 +170,29 @@ export default function Home() {
           </Box>
         </Flex>
         <Divider bg={'white'} />
-        <Flex my={'1.5em'} flexDirection={{ base: 'column', md: 'row' }}>
+        <Flex my={'2em'} flexDirection={{ base: 'column', md: 'row' }}>
           <Box
-            maxW={'30vw'} w={{ base: '40vw', md: '15em' }}
+            maxW={'30vw'} w={{ base: '100vw', md: '15em' }}
             mx={{ base: 'auto', md: '0' }}
             textAlign={{ base: 'center', md: 'left' }}
           >
-            <Text
-              fontSize={'1.5em'}
-              fontWeight={'bold'}
-            >
-              SKILLS
-            </Text>
+            <UnderlinedTitle text={'SKILLS'} color={'purple'} />
           </Box>
           <Box
             mx={'auto'}
             w={{ base: '100vw', md: '65em' }}
-            maxW={{ base: '75vw', md: '35em' }}
+            maxW={{ base: '75vw', md: '40em' }}
           >
             <Flex flexDirection={'column'} gap={7}>
               {
                 grouped_skills_category.map((group, index) => {
                   return (
-                    <Flex my={'0.5em'} flexDirection={{ base: 'column', md: 'row' }} gap={7} key={`group-category-${index}`}>
+                    <Flex flexDirection={{ base: 'column', md: 'row' }} gap={7} key={`group-category-${index}`}>
                       {
                         group.map(skills => {
                           return (
                             <Flex flexDirection={'column'} gap={1} key={`category-skill-${skills.category_name}`}>
-                              <Text mx={'auto'}>{skills.category_name}</Text>
+                              <Text mx={'auto'} fontWeight={'bold'} fontSize={'1em'}>{skills.category_name}</Text>
                               {
                                 skills.items.map(skill => {
                                   return (
@@ -214,7 +202,7 @@ export default function Home() {
                                         value={skill.score}
                                         color={'purple'}
                                         mx={'auto'}
-                                        w={{ base: '100%', md: '20em' }} h={'1.1em'}
+                                        w={{ base: '100%', md: '18em', lg: '20em' }} h={'1.1em'}
                                         bg={'gray.600'}
                                       />
                                     </Fragment>
@@ -226,6 +214,66 @@ export default function Home() {
                         })
                       }
                     </Flex>
+                  )
+                })
+              }
+            </Flex>
+          </Box>
+        </Flex>
+        <Divider bg={'white'} />
+        <Flex my={'2em'} flexDirection={{ base: 'column', md: 'row' }}>
+          <Box
+            maxW={'100vw'} w={{ base: '100vw', md: '15em' }}
+            mx={{ base: 'auto', md: '0' }}
+            textAlign={{ base: 'center', md: 'left' }}
+          >
+            <UnderlinedTitle text={'PROJECTS'} color={'purple'} />
+          </Box>
+          <Box
+            mx={'auto'}
+            w={{ base: '100vw', md: '65em' }}
+            maxW={{ base: '100vw', md: '55em' }}
+          >
+            <Flex flexDirection={'column'} gap={7}>
+              {
+                profile_info.projects.map((group, index) => {
+                  const grouped_items = [];
+                  for (let i = 0; i < group.items.length; i += 3) {
+                    if (i + 2 < group.items.length) {
+                      grouped_items.push([group.items[i], group.items[i + 1], group.items[i + 2]]);
+                    } else if (i + 1 < group.items.length) {
+                      grouped_items.push([group.items[i], group.items[i + 1]]);
+                    } else {
+                      grouped_items.push([group.items[i]]);
+                    }
+                  }
+
+                  return (
+                    <>
+                      <Text mx={'auto'} fontWeight={'bold'} fontSize={'1.25em'}>{group.category_name}</Text>
+                      <Flex gap={7} flexDirection={'column'} key={`group-project-${index}`}>
+                        {
+                          grouped_items.map((projects, index) => {
+                            return (
+                              <Flex gap={7} key={`projects-${index}`}>
+                                {
+                                  projects.map(project => {
+                                    return (
+                                      <Project
+                                        project={project}
+                                        mx={'auto'}
+                                        w={{ base: '25vw', md: '18vw' }}
+                                        h={{ base: '25vw', md: '18vw' }}
+                                      />
+                                    );
+                                  })
+                                }
+                              </Flex>
+                            )
+                          })
+                        }
+                      </Flex>
+                    </>
                   )
                 })
               }

@@ -3,7 +3,7 @@ interface ISkill {
   score: number;
 }
 
-interface IProject {
+export interface IProject {
   experiece_id?: number;
   title: string;
   skills_acquired: ISkill[];
@@ -265,11 +265,11 @@ const profile_info: IProfileInfo = {
               score: 4,
             },
           ],
-          short_description: ``,
+          short_description: `A POS that uses an LLM to find the location of most similar item queried.`,
           description: ``,
           source_code: `https://github.com/jayouimet/smart-pos`,
           website: `https://smart-pos-web.vercel.app/`,
-          image_url: `https://www.rm-solutions.com/hubfs/Untitled%20design%20(58)-4.png`,
+          image_url: `https://lithospos.com/blog/wp-content/uploads/1200x675.webp`,
         },
         {
           title: `Final project for System development`,
@@ -296,7 +296,7 @@ const profile_info: IProfileInfo = {
       ]
     },
     {
-      category_name: "AI",
+      category_name: "Artificial Intelligence",
       items: [
         {
           title: `Final project for AI class`,

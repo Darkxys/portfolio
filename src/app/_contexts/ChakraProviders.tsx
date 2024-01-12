@@ -2,6 +2,7 @@
 
 import { CacheProvider } from '@chakra-ui/next-js';
 import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
+import Text from "@/app/_components/base/Text";
 
 const config: ThemeConfig = {
   initialColorMode: 'dark',
@@ -9,7 +10,10 @@ const config: ThemeConfig = {
 };
 
 const theme = extendTheme({
-  config
+  config,
+  components: {
+    Text
+  }
 });
 
 function ChakraProviders({ children }: { children: React.ReactNode }) {
