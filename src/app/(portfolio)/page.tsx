@@ -253,17 +253,18 @@ export default function Home() {
                       <Text mx={'auto'} fontWeight={'bold'} fontSize={'1.25em'}>{group.category_name}</Text>
                       <Flex gap={7} flexDirection={'column'} key={`group-project-${index}`}>
                         {
-                          grouped_items.map((projects, index) => {
+                          grouped_items.map((projects, projectsId) => {
                             return (
-                              <Flex gap={7} key={`projects-${index}`}>
+                              <Flex gap={7} key={`projects-${projectsId}`}>
                                 {
-                                  projects.map(project => {
+                                  projects.map((project, projectId) => {
                                     return (
                                       <Project
                                         project={project}
                                         mx={'auto'}
                                         w={{ base: '25vw', md: '18vw' }}
                                         h={{ base: '25vw', md: '18vw' }}
+                                        key={`projects-${projectsId}-id-${projectId}`}
                                       />
                                     );
                                   })
