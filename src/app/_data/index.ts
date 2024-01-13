@@ -1,294 +1,93 @@
-interface ISkill {
-  skill_label: string;
-  score: number;
-}
+import { Skills } from "../_types/SkillEnum";
 
 export interface IProject {
-  experiece_id?: number;
   title: string;
-  skills_acquired: ISkill[];
-  short_description: string;
+  skills_used: Skills[];
   description: string;
   source_code?: string;
   website?: string;
   image_url?: string;
 }
 
+export interface IEducation {
+  school_name: string;
+  diploma_type: string;
+  diploma_degree: string;
+  skills_obtained: Skills[];
+  started: number;
+  graduated: number;
+  relevant_courses: string[];
+  school_img: string;
+}
+
+export interface IExperience {
+  job_title: string;
+  company: string;
+  company_url: string;
+  started: number;
+  finished?: number;
+  company_img: string;
+  descriptions?: string[];
+}
+
 interface IProfileInfo {
-  skills: {
-    category_name: string;
-    items: ISkill[];
-  }[],
+  main_color: string;
+  email: string,
+  github: string,
+  linkedin: string,
   projects: {
     category_name: string;
     items: IProject[];
   }[],
-  education: {
-    school_name: string;
-    diploma_type: string;
-    diploma_degree: string;
-    skills_obtained: string[];
-    started: number;
-    graduated: number;
-  }[],
-  experiences: {
-    id: number;
-    job_title: string;
-    company: string;
-    company_url: string;
-    started: number;
-    finished?: number;
-  }[]
+  education: IEducation[],
+  experiences: IExperience[]
 };
 
 const profile_info: IProfileInfo = {
-  skills: [
-    {
-      category_name: "Web development",
-      items: [
-        {
-          skill_label: "HTML/CSS/JS",
-          score: 4.5
-        },
-        {
-          skill_label: "React.JS",
-          score: 4
-        },
-        {
-          skill_label: "NextJS",
-          score: 4
-        },
-      ]
-    },
-    {
-      category_name: "Databases",
-      items: [
-        {
-          skill_label: "SQL",
-          score: 4
-        },
-        {
-          skill_label: "MongoDB",
-          score: 4.5
-        },
-        {
-          skill_label: "Hasura",
-          score: 3.5
-        },
-      ]
-    },
-    {
-      category_name: "Software Development",
-      items: [
-        {
-          skill_label: "C#",
-          score: 4
-        },
-        {
-          skill_label: "C++",
-          score: 4
-        },
-        {
-          skill_label: "Python",
-          score: 4.5
-        },
-        {
-          skill_label: "Java",
-          score: 4
-        },
-      ]
-    },
-    {
-      category_name: "Machine Learning",
-      items: [
-        {
-          skill_label: "Ollama",
-          score: 4
-        },
-        {
-          skill_label: "Pytorch",
-          score: 3.5
-        },
-        {
-          skill_label: "Tensorflow",
-          score: 4
-        },
-      ]
-    },
-    {
-      category_name: "Spoken Languages",
-      items: [
-        {
-          skill_label: "French",
-          score: 5
-        },
-        {
-          skill_label: "English",
-          score: 4.5
-        },
-      ]
-    },
-  ],
+  main_color: 'indigo',
+  email: 'painchaudfrancis@gmail.com',
+  github: 'https://github.com/Darkxys',
+  linkedin: 'https://www.linkedin.com/in/francis-painchaud-1a5003246/',
   projects: [
     {
       category_name: "Web Development",
       items: [
         {
-          experiece_id: 0,
           title: `XPENS.AI`,
-          skills_acquired: [
-            {
-              skill_label: `Python`,
-              score: 4,
-            },
-            {
-              skill_label: `ReactJS`,
-              score: 3,
-            },
-            {
-              skill_label: `MongoDB`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Data Structure`,
-              score: 3.5,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          skills_used: [Skills.Python, Skills.React, Skills.Javascript, Skills.Nodedotjs,],
+          description: `This web portal offers a streamlined approach to invoice management by enabling users to scan invoices from PDF format directly into a database using advanced AI technology. The system is designed to facilitate meticulous monitoring of invoice costs through an intuitive user interface. It incorporates a reliable search algorithm tailored for effective invoice tracking. Additionally, the portal includes an automated email notification service, which alerts users when predefined conditions are met, enhancing operational efficiency and responsiveness.`,
           source_code: ``,
           website: `https://xpens.ai/`,
           image_url: `https://media.licdn.com/dms/image/C4E0BAQHHlUAhE-drDQ/company-logo_200_200/0/1630642427248/xpensai_logo?e=2147483647&v=beta&t=uvoKMiF3xpkJzToMEG6Dab80UPVatkgf9Zehljj44DA`,
         },
         {
-          experiece_id: 0,
           title: `Dredd-Secure`,
-          skills_acquired: [
-            {
-              skill_label: `NextJS`,
-              score: 4,
-            },
-            {
-              skill_label: `GoLang`,
-              score: 3,
-            },
-            {
-              skill_label: `Blockchain`,
-              score: 3,
-            },
-            {
-              skill_label: `Cosmos SDK`,
-              score: 3,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.GoLang, Skills.Blockchain],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: `https://github.com/theproduct-space/dredd-secure`,
           website: `https://www.dreddsecure.io/`,
           image_url: `https://www.dreddsecure.io/assets/Dredd-logo.06667a25.png`,
         },
         {
-          experiece_id: 0,
           title: `sparkr.ai`,
-          skills_acquired: [
-            {
-              skill_label: `NextJS`,
-              score: 5,
-            },
-            {
-              skill_label: `Ollama`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Hasura`,
-              score: 4,
-            },
-            {
-              skill_label: `Fine-Tuning Generative AI`,
-              score: 4,
-            },
-            {
-              skill_label: `AI`,
-              score: 4,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: ``,
           website: `In Development`,
           image_url: `https://app.sparkr.ai/_next/image?url=https%3A%2F%2Fmiro.medium.com%2F0*YIV93VC2Poo7VCw7&w=1920&q=75`,
         },
         {
-          experiece_id: 3,
-          title: `CMS`,
-          skills_acquired: [
-            {
-              skill_label: `Django`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Python`,
-              score: 5,
-            },
-            {
-              skill_label: `ReactJS`,
-              score: 4,
-            },
-          ],
-          short_description: ``,
-          description: ``,
-          source_code: ``,
-          website: ``,
-          image_url: `https://www.onsitegeeks.ca/wp-content/uploads/2021/07/cms2-01.png`,
-        },
-        {
           title: `Smart-POS`,
-          skills_acquired: [
-            {
-              skill_label: `NextJS`,
-              score: 5,
-            },
-            {
-              skill_label: `Ollama`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Hasura`,
-              score: 4,
-            },
-            {
-              skill_label: `Fine-Tuning Generative AI`,
-              score: 4,
-            },
-            {
-              skill_label: `AI`,
-              score: 4,
-            },
-          ],
-          short_description: `A POS that uses an LLM to find the location of most similar item queried.`,
-          description: ``,
+          skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: `https://github.com/jayouimet/smart-pos`,
           website: `https://smart-pos-web.vercel.app/`,
           image_url: `https://lithospos.com/blog/wp-content/uploads/1200x675.webp`,
         },
         {
           title: `Final project for System development`,
-          skills_acquired: [
-            {
-              skill_label: `NextJS`,
-              score: 5,
-            },
-            {
-              skill_label: `Engineering`,
-              score: 4,
-            },
-            {
-              skill_label: `Algorithm`,
-              score: 4,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: `https://github.com/jayouimet/projet-dev-sys-info`,
           website: `https://projet-dev-sys-info.vercel.app/`,
           image_url: `https://imageio.forbes.com/specials-images/imageserve/61f000e1bd03a0ef1406d579/Modern-Blue-Service-Station/960x0.jpg?height=473&width=711&fit=bounds`,
@@ -299,84 +98,25 @@ const profile_info: IProfileInfo = {
       category_name: "Artificial Intelligence",
       items: [
         {
-          title: `Final project for AI class`,
-          skills_acquired: [
-            {
-              skill_label: `Python`,
-              score: 5,
-            },
-            {
-              skill_label: `Neural Networks`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Algorithms`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Data Structure`,
-              score: 4,
-            },
-            {
-              skill_label: `Optimization`,
-              score: 4,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          title: `Neural Network and KNN algorithms`,
+          skills_used: [Skills.Python],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: `https://github.com/Darkxys/final-project-INF1183`,
           website: ``,
           image_url: `https://victorzhou.com/media/nn-series/network.svg`,
         },
         {
-          experiece_id: 1,
           title: `Machine Learning models Exploration`,
-          skills_acquired: [
-            {
-              skill_label: `Python`,
-              score: 5,
-            },
-            {
-              skill_label: `Neural Networks`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Algorithms`,
-              score: 4,
-            },
-            {
-              skill_label: `Data Structure`,
-              score: 4,
-            },
-            {
-              skill_label: `TensorFlow`,
-              score: 3.5,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          skills_used: [Skills.Python, Skills.TensorFlow],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: `https://github.com/Darkxys/ml-exploration`,
           website: ``,
           image_url: `https://builtin.com/sites/www.builtin.com/files/styles/ckeditor_optimize/public/inline-images/machine-learning-pillar-page-overview.jpeg`,
         },
         {
           title: `AI Chess Engine`,
-          skills_acquired: [
-            {
-              skill_label: `C++`,
-              score: 4,
-            },
-            {
-              skill_label: `Algorithms`,
-              score: 4.5,
-            },
-            {
-              skill_label: `Data Structure`,
-              score: 4.5,
-            },
-          ],
-          short_description: ``,
-          description: ``,
+          skills_used: [Skills.Cplusplus],
+          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
           source_code: `https://github.com/Darkxys/chess-ai-cpp`,
           website: ``,
           image_url: `https://builtin.com/cdn-cgi/image/f=auto,quality=80,width=752,height=435/https://builtin.com/sites/www.builtin.com/files/styles/byline_image/public/2022-10/chess-AI.jpg`,
@@ -386,56 +126,77 @@ const profile_info: IProfileInfo = {
   ],
   experiences: [
     {
-      id: 0,
       job_title: 'Full-Stack Developer',
       company: 'ProductShop',
       company_url: 'https://www.productshop.io/',
       started: 1646110800,
       finished: undefined,
+      company_img: 'https://media.licdn.com/dms/image/C4E0BAQE8Y-OrbmwAcA/company-logo_200_200/0/1642454414003?e=1713398400&v=beta&t=abHNnzbVk_EPCKeQncoDPFVjgeMqCw1N6jxSDkOjMg4',
+      descriptions: [
+        `Project Initialization: Forked our boilerplate to set up the project structure, ensuring a solid foundation for development.`,
+        `Backend Setup: Configured Hasura permissions, established serverless links, and set up Docker containers to create a robust backend environment.`,
+        `Feature Documentation and Backend Analysis: Conducted an in-depth analysis to document features and identify necessary backend functions to be exposed, aligning with project requirements.`,
+        `Database Design and Implementation: Developed an efficient database model, aligned with the project's needs, and populated it with relevant data, eliminating reliance on paper spreadsheets.`,
+        `Efficiency Testing and Optimization: Generated embeddings after thorough research, integrated user feedback, and conducted efficiency tests using test-driven development approaches. Continuously researched and applied optimizations for fine-tuning performance as needed.`
+      ]
     },
     {
-      id: 1,
       job_title: 'Junior Research Assistant',
       company: 'UQO',
       company_url: 'https://uqo.ca/',
       started: 1667275200,
       finished: 1693540800,
+      company_img: `https://rechercheciusssnim.ca/wp-content/uploads/2019/07/logo-uqo.jpg`,
+      descriptions: [
+        `The objective of the research was to systematically evaluate the strengths and weaknesses of various Machine Learning models. This analysis was aimed at identifying optimal use-case scenarios for each model, ensuring that the most suitable Machine Learning approach is selected based on specific situational requirements.`,
+        `Researched the following Machine Learning models: Neural Networks, LLM / Transformers, LSTM and GAN.`
+      ]
     },
     {
-      id: 2,
       job_title: 'Teaching Assistant',
       company: 'UQO',
       company_url: 'https://uqo.ca/',
       started: 1662004800,
       finished: 1669870800,
+      company_img: `https://rechercheciusssnim.ca/wp-content/uploads/2019/07/logo-uqo.jpg`,
+      descriptions: [
+        `I served as a teaching assistant for the "Programmation 1" course under the guidance of Professor Omer Landry Nguena Timo. My role involved providing support to students during their practical sessions by addressing their queries and concerns. Additionally, I assisted the professor in evaluating the students' competencies and identifying areas for improvement, contributing to an enhanced learning experience.`
+      ]
     },
     {
-      id: 3,
       job_title: 'Full-Stack Developer Intern',
       company: 'Vulcain Metal',
       company_url: 'https://www.vulcain.com/en/',
       started: 1577854800,
       finished: 1598932800,
+      company_img: 'https://media.licdn.com/dms/image/C4E0BAQFyllv_Eft-7A/company-logo_200_200/0/1630642636090/vulcain_metal_logo?e=1713398400&v=beta&t=CWja27bhuaYGYpq2M7mRgW0rbb2KfXajR6KT7s4ect8',
+      descriptions: [
+        `Enhanced operational efficiency by 60% through the development and implementation of a new web portal. This portal features key performance indicators (KPIs), comprehensive performance tracking, and enables sophisticated data analysis for warehouse operations, significantly improving job monitoring and management.`,
+        `Revamped an outdated database into a modern, efficient model and crafted a user-friendly interface for the new inventory system. This transformation eliminated the reliance on paper spreadsheets, streamlining operations and significantly enhancing productivity for warehouse staff.`,
+        `Implemented a rigorous test-driven development approach, focusing on writing comprehensive functional, specification, and unit tests using PyTest to ensure high-quality, reliable code.`,
+      ]
     }
   ],
   education: [
     {
       school_name: `UQO`,
-      diploma_type: `Bachelor of Science`,
-      diploma_degree: `Computer Science`,
-      skills_obtained: ['Python', 'AI', 'Web Development', 'Algorithms', 'Data Structures'],
+      diploma_type: `BSc`,
+      diploma_degree: `in Computer Science`,
+      skills_obtained: [Skills.Python, Skills.Java, Skills.MySQL, Skills.Javascript],
+      relevant_courses: ["Data Structures & Algorithms", "Software Design", "Web Development", "Databases", "Artificial Intelligence"],
       started: 1630468800,
       graduated: 1701406800,
-
+      school_img: 'https://rechercheciusssnim.ca/wp-content/uploads/2019/07/logo-uqo.jpg',
     },
     {
       school_name: `CSTJ (CEGEP of Saint-Jerome)`,
       diploma_type: `DEC (Technique)`,
       diploma_degree: `Computer Technician`,
-      skills_obtained: ['C++', 'C#', 'Web Development', 'Databases'],
+      skills_obtained: [Skills.Cplusplus, Skills.Csharp, Skills.MySQL, Skills.Javascript, Skills.HTML, Skills.CSS],
+      relevant_courses: ["Web Development", "Databases", "Software Development"],
       started: 1472702400,
       graduated: 1588305600,
-
+      school_img: 'https://remise.cstj.qc.ca/images/LogoCSTJ.png'
     }
   ],
 }

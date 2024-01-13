@@ -1,80 +1,51 @@
-import React, { useState } from 'react';
-import { IProject } from "@/app/_data";
-import { Box, BoxProps, Center, Flex, Text, Button, Link } from "@chakra-ui/react";
-import { FaGithub, FaGlobe } from 'react-icons/fa';
+import { IProject, profile_info } from "@/app/_data";
+import { IconFromEnum } from "@/app/_utils/IconFromEnum";
+import { Text, BoxProps, Flex, Image, Center, Button, Link } from "@chakra-ui/react";
+import { FaCode, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { LinkButton } from "../buttons/LinkButton";
 
 interface ProjectProps extends BoxProps {
   project: IProject;
 }
 
 export default function Project({ project, ...rest }: ProjectProps) {
-  const [isHovered, setIsHovered] = useState(false);
+  const color = profile_info.main_color;
 
   return (
-    <Flex
-      flexDirection={'column'}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
-      {...rest}
-    >
-      <Box
-        bgPosition="center"
-        bgRepeat="no-repeat"
-        bgSize={'cover'}
-        bgImage={project.image_url}
-        h={'35%'}
-        filter={isHovered ? 'blur(16px)' : 'none'}
-        transition="0.3s ease-in-out"
-      >
-      </Box>
-      <Center
-        h={'100%'}
-        bg={'gray.700'}
-        w={`inherit`}
-        textAlign={'center'}
-        flexDirection={'column'}
-        filter={isHovered ? 'blur(16px)' : 'none'}
-        transition="0.3s ease-in-out"
-      >
-        <Text mt={2} mb={'auto'} mx={'auto'} fontWeight={'bold'} fontSize={'1.2vw'}>
-          {project.title}
-        </Text>
-        {project.skills_acquired.map((skill, index) => (
-          <Text key={index} mb={'auto'} mx={'auto'} color={'white.900'} fontSize={'1vw'}>
-            {skill.skill_label}
-          </Text>
-        ))}
-      </Center>
-      {isHovered && (
-        <Center flexDirection={'column'} h={'inherit'} my={'auto'} w={'inherit'} position="absolute">
-          <Text color={'white'} mt={2} mb={'auto'} mx={'auto'} fontWeight={'bold'} fontSize={'1.4vw'} textAlign={'center'}>
-            {project.title}
-          </Text>
-          <Text mb={'auto'} fontStyle={'italic'}>{project.short_description}</Text>
-          <Flex mb={'auto'} w={'50%'}>
-            {
-              project.source_code &&
-              <Link
-                href={project.source_code}
-                isExternal _hover={{ color: 'purple' }}
-                mx={'auto'}
-              >
-                <FaGithub size={'3vw'} />
-              </Link>
-            }
-            {
-              project.website &&
-              <Link
-                href={project.website}
-                isExternal _hover={{ color: 'purple' }}
-                mx={'auto'}
-              >
-                <FaGlobe size={'3vw'} />
-              </Link>
-            }
-          </Flex>
+    <Flex my={'1.5rem'} flexDirection={{ base: 'column', lg: 'row' }} mx={'auto'} gap={{ base: '0.5rem', lg: '2rem' }}>
+      <Flex w={{ base: '100%', lg: '50%' }} mx={{ base: 'auto', lg: 0 }}>
+        <Image
+          alt={'Project Image'}
+          aspectRatio={16 / 9}
+          src={project.image_url}
+          objectFit='cover'
+          border={`1px solid ${color}`}
+          w={{base:'90%', lg:'100%'}}
+          mx={'auto'}
+        />
+      </Flex>
+      <Flex gap={'0.25rem'} w={{ base: '100%', lg: '50%' }} flexDirection={'column'}>
+        <Text fontWeight={'bold'} fontSize={'1.25rem'}>{project.title}</Text>
+        <Center gap={3} w={'fit-content'}>
+          <Text color={color} fontWeight={'bold'} fontStyle={'italic'}>Used skills: </Text>
+          {
+            project.skills_used.map(skill => {
+              const Ic = IconFromEnum(skill);
+              return <Ic key={`project-skill-${skill}`} color={'default'} size={'2rem'} />
+            })
+          }
         </Center>
-      )}
+        <Text>{project.description}</Text>
+
+        <Flex gap={2} mt={2}>
+          {
+            project.website && <LinkButton label={'Live'} href={project.website} icon={<FaExternalLinkAlt />} />
+          }
+          {
+            project.source_code && <LinkButton label={'Source'} href={project.source_code} icon={<FaGithub />} />
+          }
+        </Flex>
+      </Flex>
     </Flex>
   );
 }
