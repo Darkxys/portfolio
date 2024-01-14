@@ -2,6 +2,7 @@ import { profile_info } from '@/app/_data'
 import { Divider, Flex, Text } from '@chakra-ui/react'
 import { Education } from '../education/Education'
 import { Base } from '../layout/base'
+import { Fragment } from 'react'
 
 export const Educations = () => {
   const color = profile_info.main_color;
@@ -18,10 +19,10 @@ export const Educations = () => {
         {
           profile_info.education.map((e, index) => {
             return (
-              <>
+              <Fragment key={`education-${e.graduated}`}>
                 {index !== 0 && <Divider marginBottom={'1rem'} borderWidth={'1px'} borderColor={'gray.300'} />}
                 <Education education={e} />
-              </>
+              </Fragment>
             )
           })
         }

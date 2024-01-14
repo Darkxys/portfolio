@@ -3,6 +3,7 @@ import { Divider, Flex, Text } from '@chakra-ui/react'
 import { Education } from '../education/Education'
 import { Base } from '../layout/base'
 import { Experience } from '../experience/Experience'
+import { Fragment } from 'react'
 
 export const Experiences = () => {
   const color = profile_info.main_color;
@@ -19,10 +20,10 @@ export const Experiences = () => {
         {
           profile_info.experiences.map((e, index) => {
             return (
-              <>
+              <Fragment key={`experience-${e.started}`}>
                 {index !== 0 && <Divider marginBottom={'1rem'} borderWidth={'1px'} borderColor={'gray.300'} />}
                 <Experience experience={e} />
-              </>
+              </Fragment>
             )
           })
         }

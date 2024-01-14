@@ -5,6 +5,7 @@ import { ChakraProvider, extendTheme, ThemeConfig } from '@chakra-ui/react';
 
 const config: ThemeConfig = {
   initialColorMode: 'light',
+  disableTransitionOnChange: true,
   useSystemColorMode: false,
 };
 const indigo = {
@@ -30,13 +31,11 @@ const theme = extendTheme({
 
 function ChakraProviders({ children }: { children: React.ReactNode }) {
   return (
-    <CacheProvider>
-      <ChakraProvider
-        theme={theme}
-      >
-        {children}
-      </ChakraProvider>
-    </CacheProvider>
+    <ChakraProvider
+      theme={theme}
+    >
+      {children}
+    </ChakraProvider>
   );
 }
 
