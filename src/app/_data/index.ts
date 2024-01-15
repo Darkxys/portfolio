@@ -78,7 +78,7 @@ const profile_info: IProfileInfo = {
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
           description: `This platform leverages advanced generative AI models, including LLaMa2, to revolutionize content creation for digital marketing. It offers an array of services including the development of social media blogs, email marketing strategies, comprehensive content marketing, creation of paid media content, and SEO keyword optimization. Additionally, it possesses the capability to generate contextually relevant images, aligning seamlessly with the specified topics or articles.`,
           source_code: ``,
-          website: `In Development`,
+          website: `https://www.sparkr.ai/`,
           image_url: sparkr.src,
         },
         {

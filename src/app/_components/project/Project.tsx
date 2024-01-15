@@ -18,7 +18,6 @@ export default function Project({ project, ...rest }: ProjectProps) {
           alt={'Project Image'}
           aspectRatio={16 / 9}
           src={project.image_url}
-          objectFit='cover'
           w={{base:'90%', lg:'100%'}}
           mx={'auto'}
         />
