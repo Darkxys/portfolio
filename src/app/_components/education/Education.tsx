@@ -31,8 +31,7 @@ export const Education = ({ education }: EducationProps) => {
           <Wrap>
             {
               education.skills_obtained.map(skill => {
-                const Ic = IconFromEnum(skill);
-                return <Ic key={`education-${education.graduated}-skill-${skill}`} color={'default'} size={'2rem'} />
+                return <IconFromEnum icon={skill} key={`education-${education.graduated}-skill-${skill}`} color={'default'} w={'2rem'} h={'2rem'} />
               })
             }
           </Wrap>

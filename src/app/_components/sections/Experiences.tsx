@@ -14,7 +14,7 @@ export const Experiences = () => {
         My <Text as={'span'} color={color}>Experience</Text>
       </Text>
       <Flex
-        w={{ base: '90%', lg: '70%' }} mx={'auto'}
+        w={{ base: '100%', lg: '80%' }} mx={'auto'}
         flexDirection={'column'} boxShadow={'0 0.15rem 1rem rgba(43, 52, 56, 0.15)'} p={{base: '1rem', md: '2rem', lg:'2.5rem'}} gap={5}
       >
         {

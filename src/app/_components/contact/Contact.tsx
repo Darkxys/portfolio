@@ -1,6 +1,5 @@
 import { profile_info } from '@/app/_data';
-import { Center, Flex, Link, Text } from '@chakra-ui/react';
-import React from 'react'
+import { Center, Link, Text } from '@chakra-ui/react';
 import { IconType } from 'react-icons';
 
 interface ContactProps {
@@ -12,6 +11,7 @@ interface ContactProps {
 export const Contact = ({ label, href, Ic }: ContactProps) => {
   return (
     <Link
+      className={'scaleUp'}
       w={'10rem'} p={'1.5rem'}
       href={href} isExternal
       _hover={{ textDecoration: 'none' }}

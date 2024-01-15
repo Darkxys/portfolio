@@ -17,13 +17,12 @@ export const TechnicalSkills = () => {
       <Wrap spacing={'2rem'} justify={'center'}>
         {
           skillNames.map((name: string, index: number) => {
-            const Ic = IconFromEnum(index);
             const formattedName = name.replaceAll(/plus/g, '+').replaceAll(/dot/g, '.').replaceAll(/sharp/g, '#');
 
             return (
               <Flex key={`skills-${index}`} flexDirection={'column'}>
-                <Ic size={'7rem'} color={'default'} />
-                <Text mt={2} textAlign={'center'}>{formattedName}</Text>
+                <IconFromEnum icon={index} className={'scaleUp'} w={'7rem'} h={'7rem'} color={'default'} />
+                <Text mt={3} textAlign={'center'}>{formattedName}</Text>
               </Flex>
             );
           })

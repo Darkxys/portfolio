@@ -19,7 +19,6 @@ export default function Project({ project, ...rest }: ProjectProps) {
           aspectRatio={16 / 9}
           src={project.image_url}
           objectFit='cover'
-          border={`1px solid ${color}`}
           w={{base:'90%', lg:'100%'}}
           mx={'auto'}
         />
@@ -30,14 +29,13 @@ export default function Project({ project, ...rest }: ProjectProps) {
           <Text color={color} fontWeight={'bold'} fontStyle={'italic'}>Used skills: </Text>
           {
             project.skills_used.map(skill => {
-              const Ic = IconFromEnum(skill);
-              return <Ic key={`project-skill-${skill}`} color={'default'} size={'2rem'} />
+              return <IconFromEnum icon={skill} key={`project-skill-${skill}`} color={'default'} w={'2rem'} h={'2rem'} />
             })
           }
         </Center>
         <Text>{project.description}</Text>
 
-        <Flex gap={2} mt={2}>
+        <Flex gap={2} mt={'auto'}>
           {
             project.website && <LinkButton label={'Live'} href={project.website} icon={<FaExternalLinkAlt />} />
           }

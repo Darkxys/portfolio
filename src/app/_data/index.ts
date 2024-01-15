@@ -1,4 +1,8 @@
 import { Skills } from "../_types/SkillEnum";
+import dredd from '../_assets/dredd-secure.png';
+import sparkr from '../_assets/sparkr-ai.png';
+import smartpos from '../_assets/smart-pos.png';
+import sgp from '../_assets/sgp.png';
 
 export interface IProject {
   title: string;
@@ -28,6 +32,7 @@ export interface IExperience {
   finished?: number;
   company_img: string;
   descriptions?: string[];
+  skills_obtained: Skills[];
 }
 
 interface IProfileInfo {
@@ -44,7 +49,7 @@ interface IProfileInfo {
 };
 
 const profile_info: IProfileInfo = {
-  main_color: 'indigo',
+  main_color: 'purple',
   email: 'painchaudfrancis@gmail.com',
   github: 'https://github.com/Darkxys',
   linkedin: 'https://www.linkedin.com/in/francis-painchaud-1a5003246/',
@@ -63,37 +68,37 @@ const profile_info: IProfileInfo = {
         {
           title: `Dredd-Secure`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.GoLang, Skills.Blockchain],
-          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
+          description: `This platform provides a seamless solution for cross-chain asset trading within the Cosmos Blockchain ecosystem. It also serves as a dedicated module, designed to facilitate these transactions using the Cosmos SDK in Go language, ensuring efficient and secure interoperability between different blockchain networks within the Cosmos ecosystem.`,
           source_code: `https://github.com/theproduct-space/dredd-secure`,
           website: `https://www.dreddsecure.io/`,
-          image_url: `https://www.dreddsecure.io/assets/Dredd-logo.06667a25.png`,
+          image_url: dredd.src,
         },
         {
           title: `sparkr.ai`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
-          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
+          description: `This platform leverages advanced generative AI models, including LLaMa2, to revolutionize content creation for digital marketing. It offers an array of services including the development of social media blogs, email marketing strategies, comprehensive content marketing, creation of paid media content, and SEO keyword optimization. Additionally, it possesses the capability to generate contextually relevant images, aligning seamlessly with the specified topics or articles.`,
           source_code: ``,
           website: `In Development`,
-          image_url: `https://app.sparkr.ai/_next/image?url=https%3A%2F%2Fmiro.medium.com%2F0*YIV93VC2Poo7VCw7&w=1920&q=75`,
+          image_url: sparkr.src,
         },
         {
           title: `Smart-POS`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
-          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
+          description: `This web portal offers a comprehensive search functionality, enabling users to meticulously explore our extensive inventory. When a user's query does not correspond to any specific item in our collection, the system, powered by advanced generative AI models, provides detailed product descriptions. Additionally, it offers intelligent suggestions to refine the query, ensuring it aligns more closely with available items in our store.`,
           source_code: `https://github.com/jayouimet/smart-pos`,
           website: `https://smart-pos-web.vercel.app/`,
-          image_url: `https://lithospos.com/blog/wp-content/uploads/1200x675.webp`,
+          image_url: smartpos.src,
         },
         {
           title: `Final project for System development`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
-          description: `This social networking website allow users to create an account, obtaining their own page consisting of information about themselves. You have the ability to use features such as searching for other users on the network, sending friend requests and messaging other users, posting pictures, receiving notifications if someone messages you, likes or comments on your post, and if someone sends or accepts your friend request. Altering your privacy settings and managing how your account behaves is also an additional feature.`,
+          description: `This web portal is designed to facilitate the management of a fuel pump system. Prior to development, the project necessitated comprehensive engineering documentation, including models, schemas, and diagrams, to ensure a robust foundation. The platform enables users to efficiently record transactions correlating to the volume of fuel dispensed. Additionally, it provides real-time insights into remaining fuel levels and offers clients an intuitive interface for fuel dispensation.`,
           source_code: `https://github.com/jayouimet/projet-dev-sys-info`,
           website: `https://projet-dev-sys-info.vercel.app/`,
-          image_url: `https://imageio.forbes.com/specials-images/imageserve/61f000e1bd03a0ef1406d579/Modern-Blue-Service-Station/960x0.jpg?height=473&width=711&fit=bounds`,
+          image_url: sgp.src,
         }
       ]
-    },
+    }/*TODO: if i ever make a UI for those, uncomment this,
     {
       category_name: "Artificial Intelligence",
       items: [
@@ -122,7 +127,7 @@ const profile_info: IProfileInfo = {
           image_url: `https://builtin.com/cdn-cgi/image/f=auto,quality=80,width=752,height=435/https://builtin.com/sites/www.builtin.com/files/styles/byline_image/public/2022-10/chess-AI.jpg`,
         },
       ]
-    },
+    },*/
   ],
   experiences: [
     {
@@ -133,12 +138,11 @@ const profile_info: IProfileInfo = {
       finished: undefined,
       company_img: 'https://media.licdn.com/dms/image/C4E0BAQE8Y-OrbmwAcA/company-logo_200_200/0/1642454414003?e=1713398400&v=beta&t=abHNnzbVk_EPCKeQncoDPFVjgeMqCw1N6jxSDkOjMg4',
       descriptions: [
-        `Project Initialization: Forked our boilerplate to set up the project structure, ensuring a solid foundation for development.`,
-        `Backend Setup: Configured Hasura permissions, established serverless links, and set up Docker containers to create a robust backend environment.`,
-        `Feature Documentation and Backend Analysis: Conducted an in-depth analysis to document features and identify necessary backend functions to be exposed, aligning with project requirements.`,
-        `Database Design and Implementation: Developed an efficient database model, aligned with the project's needs, and populated it with relevant data, eliminating reliance on paper spreadsheets.`,
-        `Efficiency Testing and Optimization: Generated embeddings after thorough research, integrated user feedback, and conducted efficiency tests using test-driven development approaches. Continuously researched and applied optimizations for fine-tuning performance as needed.`
-      ]
+        `Established a robust backend environment by configuring Hasura permissions, using serverless links, and setting up Docker containers.`,
+        `Meticulously documented features and conducted backend analysis to align with project requirements, leading to an efficient database model.`,
+        `Enhanced efficiency by generating embeddings from research and feedback, rigorously testing, and continuously optimizing performance with test-driven development.`,  
+      ],
+      skills_obtained: [Skills.Nextdotjs, Skills.Typescript, Skills.ChakraUI, Skills.GraphQL, Skills.GoLang, Skills.Hasura, Skills.Javascript, Skills.MongoDB, Skills.Nodedotjs, Skills.PostgreSQL, Skills.React]
     },
     {
       job_title: 'Junior Research Assistant',
@@ -148,9 +152,10 @@ const profile_info: IProfileInfo = {
       finished: 1693540800,
       company_img: `https://rechercheciusssnim.ca/wp-content/uploads/2019/07/logo-uqo.jpg`,
       descriptions: [
-        `The objective of the research was to systematically evaluate the strengths and weaknesses of various Machine Learning models. This analysis was aimed at identifying optimal use-case scenarios for each model, ensuring that the most suitable Machine Learning approach is selected based on specific situational requirements.`,
-        `Researched the following Machine Learning models: Neural Networks, LLM / Transformers, LSTM and GAN.`
-      ]
+        `Comprehensive evaluation of those Machine Learning models: Neural Networks, LLM/Transformers, LSTM, GAN.`,
+        `Focus on identifying strengths, weaknesses, and ideal use-case scenarios for appropriate model selection based on specific situational needs.`
+      ],
+      skills_obtained: [Skills.Python, Skills.TensorFlow]
     },
     {
       job_title: 'Teaching Assistant',
@@ -160,8 +165,9 @@ const profile_info: IProfileInfo = {
       finished: 1669870800,
       company_img: `https://rechercheciusssnim.ca/wp-content/uploads/2019/07/logo-uqo.jpg`,
       descriptions: [
-        `I served as a teaching assistant for the "Programmation 1" course under the guidance of Professor Omer Landry Nguena Timo. My role involved providing support to students during their practical sessions by addressing their queries and concerns. Additionally, I assisted the professor in evaluating the students' competencies and identifying areas for improvement, contributing to an enhanced learning experience.`
-      ]
+        `I assisted in the "Programmation 1" course under Professor Omer Landry Nguena Timo, supporting students during practical sessions, addressing their queries, and aiding the professor in evaluating student competencies to enhance learning.`
+      ],
+      skills_obtained: [Skills.Java]
     },
     {
       job_title: 'Full-Stack Developer Intern',
@@ -171,10 +177,11 @@ const profile_info: IProfileInfo = {
       finished: 1598932800,
       company_img: 'https://media.licdn.com/dms/image/C4E0BAQFyllv_Eft-7A/company-logo_200_200/0/1630642636090/vulcain_metal_logo?e=1713398400&v=beta&t=CWja27bhuaYGYpq2M7mRgW0rbb2KfXajR6KT7s4ect8',
       descriptions: [
-        `Enhanced operational efficiency by 60% through the development and implementation of a new web portal. This portal features key performance indicators (KPIs), comprehensive performance tracking, and enables sophisticated data analysis for warehouse operations, significantly improving job monitoring and management.`,
-        `Revamped an outdated database into a modern, efficient model and crafted a user-friendly interface for the new inventory system. This transformation eliminated the reliance on paper spreadsheets, streamlining operations and significantly enhancing productivity for warehouse staff.`,
-        `Implemented a rigorous test-driven development approach, focusing on writing comprehensive functional, specification, and unit tests using PyTest to ensure high-quality, reliable code.`,
-      ]
+        `Developed a sophisticated web portal for enhanced operational efficiency in warehouse operations, incorporating KPIs, performance tracking, and advanced data analysis tools.`,
+        `Transformed an outdated database into a modern, user-friendly inventory system, eliminating the need for paper spreadsheets and significantly improving staff productivity.`,
+        `Implemented a test-driven development approach using PyTest, focusing on comprehensive functional, specification, and unit testing to ensure high-quality and reliable code.`,
+      ],
+      skills_obtained: [Skills.React, Skills.Nodedotjs, Skills.Django, Skills.Python, Skills.Javascript, Skills.Nodedotjs, Skills.MySQL]
     }
   ],
   education: [

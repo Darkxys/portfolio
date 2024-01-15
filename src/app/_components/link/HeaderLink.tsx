@@ -14,26 +14,28 @@ export const HeaderLink = ({ anchor, label, icon }: HeaderLinkProps) => {
       _hover={{
         '&::after': {
           bg: profile_info.main_color,
+          width: '100%'
         }
       }}
       _after={{
         content: '""',
         position: 'relative',
         display: 'block',
-        width: '100%',
+        width: '0%',
         height: '3px',
         margin: 'auto',
         bg: 'gray.900',
+        transition: 'width 0.3s ease'
       }}
       href={anchor}
     >
-      <Flex
+      <Center
         gap={2}
         flexDirection={'row'}
       >
         {icon}
         <Text>{label}</Text>
-      </Flex>
+      </Center>
     </Link>
   )
 }
