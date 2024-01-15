@@ -10,7 +10,7 @@ export const Projects = () => {
   return (
     <Base gap={'3rem'} mt={'1.5rem'} id={'projects'} flexDirection={'column'}>
       <Text mb={'1.5rem'} mx={'auto'} fontWeight={'bold'} fontSize={'1.5em'}>
-        My <Text as={'span'} color={color}>Projects</Text>
+        My <Text as={'span'} color={color}>Contributions</Text>
       </Text>
       {
         profile_info.projects.map(category => {

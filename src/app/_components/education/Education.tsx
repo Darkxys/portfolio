@@ -16,7 +16,6 @@ export const Education = ({ education }: EducationProps) => {
         <Image
           alt={'School Image'}
           w={'16em'}
-          h={'8em'}
           src={education.school_img}
         />
       </Center>

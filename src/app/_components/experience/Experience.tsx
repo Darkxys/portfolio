@@ -20,7 +20,6 @@ export const Experience = ({ experience }: ExperienceProps) => {
         <Image
           alt={'Experience Image'}
           w={'16em'}
-          h={'8em'}
           src={experience.company_img}
         />
       </Center>
