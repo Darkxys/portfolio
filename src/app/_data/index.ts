@@ -3,6 +3,8 @@ import dredd from '../_assets/dredd-secure.png';
 import sparkr from '../_assets/sparkr-ai.png';
 import smartpos from '../_assets/smart-pos.png';
 import sgp from '../_assets/sgp.png';
+import xpens from '../_assets/xpens-ai.png';
+import portfolio from '../_assets/portfolio.png';
 
 export interface IProject {
   title: string;
@@ -58,14 +60,6 @@ const profile_info: IProfileInfo = {
       category_name: "Web Development",
       items: [
         {
-          title: `XPENS.AI`,
-          skills_used: [Skills.Python, Skills.React, Skills.Javascript, Skills.Nodedotjs,],
-          description: `This web portal offers a streamlined approach to invoice management by enabling users to scan invoices from PDF format directly into a database using advanced AI technology. The system is designed to facilitate meticulous monitoring of invoice costs through an intuitive user interface. It incorporates a reliable search algorithm tailored for effective invoice tracking. Additionally, the portal includes an automated email notification service, which alerts users when predefined conditions are met, enhancing operational efficiency and responsiveness.`,
-          source_code: ``,
-          website: `https://xpens.ai/`,
-          image_url: `https://media.licdn.com/dms/image/C4E0BAQHHlUAhE-drDQ/company-logo_200_200/0/1630642427248/xpensai_logo?e=2147483647&v=beta&t=uvoKMiF3xpkJzToMEG6Dab80UPVatkgf9Zehljj44DA`,
-        },
-        {
           title: `Dredd-Secure`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.GoLang, Skills.Blockchain],
           description: `This platform provides a seamless solution for cross-chain asset trading within the Cosmos Blockchain ecosystem. It also serves as a dedicated module, designed to facilitate these transactions using the Cosmos SDK in Go language, ensuring efficient and secure interoperability between different blockchain networks within the Cosmos ecosystem.`,
@@ -90,12 +84,28 @@ const profile_info: IProfileInfo = {
           image_url: smartpos.src,
         },
         {
+          title: `My Portfolio`,
+          skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI],
+          description: `This website employs a JavaScript object to dynamically construct a portfolio, significantly simplifying the editing process. The entire system is custom-developed from the ground up.`,
+          source_code: `https://github.com/Darkxys/portfolio`,
+          website: `https://portfolio.hotbread.dev/`,
+          image_url: portfolio.src,
+        },
+        {
           title: `Final project for System development`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.ChakraUI, Skills.Hasura],
           description: `This web portal is designed to facilitate the management of a fuel pump system. Prior to development, the project necessitated comprehensive engineering documentation, including models, schemas, and diagrams, to ensure a robust foundation. The platform enables users to efficiently record transactions correlating to the volume of fuel dispensed. Additionally, it provides real-time insights into remaining fuel levels and offers clients an intuitive interface for fuel dispensation.`,
           source_code: `https://github.com/jayouimet/projet-dev-sys-info`,
           website: `https://projet-dev-sys-info.vercel.app/`,
           image_url: sgp.src,
+        },
+        {
+          title: `XPENS.AI`,
+          skills_used: [Skills.Python, Skills.React, Skills.Javascript, Skills.Nodedotjs,],
+          description: `This web portal offers a streamlined approach to invoice management by enabling users to scan invoices from PDF format directly into a database using advanced AI technology. The system is designed to facilitate meticulous monitoring of invoice costs through an intuitive user interface. It incorporates a reliable search algorithm tailored for effective invoice tracking. Additionally, the portal includes an automated email notification service, which alerts users when predefined conditions are met, enhancing operational efficiency and responsiveness.`,
+          source_code: ``,
+          website: `https://xpens.ai/`,
+          image_url: xpens.src,
         }
       ]
     }/*TODO: if i ever make a UI for those, uncomment this,
