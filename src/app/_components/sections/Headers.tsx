@@ -20,8 +20,8 @@ export const Headers = () => {
         <Center fontSize={'1.1em'}>
           <Wrap spacing={{ base: 2, lg: 10 }} justify={'center'}>
             <HeaderLink
-              anchor='#projects'
-              label='Projects'
+              anchor='#contributions'
+              label='Contributions'
               icon={<FaCode />}
             />
             <HeaderLink
