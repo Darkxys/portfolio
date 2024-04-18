@@ -5,6 +5,7 @@ import smartpos from '../_assets/smart-pos.png';
 import sgp from '../_assets/sgp.png';
 import xpens from '../_assets/xpens-ai.png';
 import portfolio from '../_assets/portfolio.png';
+import ps from '../_assets/ps.png';
 
 export interface IProject {
   title: string;
@@ -51,7 +52,7 @@ interface IProfileInfo {
 };
 
 const profile_info: IProfileInfo = {
-  main_color: 'purple',
+  main_color: '#2E8B57',
   email: 'painchaudfrancis@gmail.com',
   github: 'https://github.com/Darkxys',
   linkedin: 'https://www.linkedin.com/in/francis-painchaud-1a5003246/',
@@ -141,12 +142,12 @@ const profile_info: IProfileInfo = {
   ],
   experiences: [
     {
-      job_title: 'Full-Stack Developer',
+      job_title: 'Software Developer',
       company: 'ProductShop',
       company_url: 'https://www.productshop.io/',
       started: 1646110800,
       finished: undefined,
-      company_img: 'https://media.licdn.com/dms/image/C4E0BAQE8Y-OrbmwAcA/company-logo_200_200/0/1642454414003?e=1713398400&v=beta&t=abHNnzbVk_EPCKeQncoDPFVjgeMqCw1N6jxSDkOjMg4',
+      company_img: ps.src,
       descriptions: [
         `Established a robust backend environment by configuring Hasura permissions, using serverless links, and setting up Docker containers.`,
         `Meticulously documented features and conducted backend analysis to align with project requirements, leading to an efficient database model.`,
