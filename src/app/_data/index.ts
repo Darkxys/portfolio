@@ -186,7 +186,7 @@ const profile_info: IProfileInfo = {
       company_url: 'https://www.vulcain.com/en/',
       started: 1577854800,
       finished: 1598932800,
-      company_img: 'https://media.licdn.com/dms/image/C4E0BAQFyllv_Eft-7A/company-logo_200_200/0/1630642636090/vulcain_metal_logo?e=1713398400&v=beta&t=CWja27bhuaYGYpq2M7mRgW0rbb2KfXajR6KT7s4ect8',
+      company_img: 'https://media.licdn.com/dms/image/C4E0BAQFyllv_Eft-7A/company-logo_200_200/0/1630642636090/vulcain_metal_logo?e=1727308800&v=beta&t=rjgnmnlnZxf5WCsSqRWWmR-43uzju25vZfVBr0StGm8',
       descriptions: [
         `Developed a sophisticated web portal for enhanced operational efficiency in warehouse operations, incorporating KPIs, performance tracking, and advanced data analysis tools.`,
         `Transformed an outdated database into a modern, user-friendly inventory system, eliminating the need for paper spreadsheets and significantly improving staff productivity.`,

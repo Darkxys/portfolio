@@ -20,6 +20,8 @@ export default function Project({ project, ...rest }: ProjectProps) {
           src={project.image_url}
           w={{base:'90%', lg:'100%'}}
           mx={'auto'}
+          objectFit={'contain'} 
+          objectPosition={'center'}
         />
       </Flex>
       <Flex gap={'0.25rem'} w={{ base: '100%', lg: '50%' }} flexDirection={'column'}>
