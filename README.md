@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio
 
-## Getting Started
+Welcome to my personal portfolio repository! This repository serves as a comprehensive showcase of my skills, projects, and experiences as a Software Developer. The main goal of this repository is to present my work in a structured and organized manner, making it easy for potential employers, collaborators, and anyone interested in my work to navigate through my accomplishments.
 
-First, run the development server:
+## About This Repository
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This repository is created to function as a central hub for all the projects I have worked on throughout my career and education. It includes a variety of projects that highlight my capabilities in different aspects of software development, from web development to data analysis.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Purpose
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The primary purpose of this repository is to:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Showcase my technical skills through detailed project documentation.
+- Provide a portfolio that is easily accessible to potential employers and collaborators.
+- Demonstrate my problem-solving abilities and how I approach software development.
+- Share my learning journey and how I have evolved as a developer over time.
 
-## Learn More
+### Structure
 
-To learn more about Next.js, take a look at the following resources:
+The repository is organized into several sections, each focusing on different aspects of my professional profile:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Projects:** Contains detailed descriptions of selected projects, including technologies used, key features, and links to live demos or code repositories.
+- **Skills:** Lists my technical skills and proficiencies in various programming languages and tools.
+- **Experience:** Highlights my professional experience, including roles, responsibilities, and achievements.
+- **Education:** Provides information about my academic background and qualifications.
+- **Contact:** Offers ways to get in touch with me for potential opportunities or collaborations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## About Me
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+I am a passionate Software Developer with a Bachelor's degree in Computer Science from the University of Quebec in Outaouais. My career spans various roles where I have honed my skills in full-stack development, data science, and research.
