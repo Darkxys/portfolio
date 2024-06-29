@@ -6,6 +6,7 @@ import sgp from '../_assets/sgp.png';
 import xpens from '../_assets/xpens-ai.png';
 import portfolio from '../_assets/portfolio.png';
 import ps from '../_assets/ps.png';
+import admin_dashboard from '../_assets/react-admin-dashboard.png';
 
 export interface IProject {
   title: string;
@@ -60,6 +61,14 @@ const profile_info: IProfileInfo = {
     {
       category_name: "Web Development",
       items: [
+        {
+          title: `React Admin Dashboard`,
+          skills_used: [Skills.React, Skills.TailwindCSS, Skills.Nodedotjs],
+          description: `This project is an admin dashboard built with ReactJS and ShadCN to display business data concisely and professionally. It utilizes TailwindCSS for styling and Recharts for advanced data visualization.`,
+          source_code: `https://github.com/darkxys/react-admin-dashboard`,
+          website: `https://react-admin-dashboard-example.vercel.app/`,
+          image_url: admin_dashboard.src,
+        },
         {
           title: `Dredd-Secure`,
           skills_used: [Skills.Nextdotjs, Skills.Javascript, Skills.Nodedotjs, Skills.GoLang, Skills.Blockchain],

@@ -2,6 +2,7 @@ export enum Skills {
   Javascript,
   Typescript,
   React,
+  TailwindCSS,
   Nextdotjs,
   Nodedotjs,
   ChakraUI,
@@ -20,5 +21,5 @@ export enum Skills {
   Csharp,
   Java,
   GoLang,
-  Blockchain,
+  Blockchain
 }

@@ -12,6 +12,7 @@ export const IconFromEnum = ({ icon, ...rest }: IconFromEnumProps) => {
   const getIcon = () => {
     switch (icon) {
       case Skills.Javascript: return 'devicon:javascript';
+      case Skills.TailwindCSS: return 'devicon:tailwindcss';
       case Skills.Typescript: return 'devicon:typescript';
       case Skills.React: return 'logos:react';
       case Skills.Nextdotjs: return 'devicon:nextjs';
